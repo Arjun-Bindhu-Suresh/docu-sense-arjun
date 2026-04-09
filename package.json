@@ -1,0 +1,26 @@
+{
+  "name": "docu-sense-arjun",
+  "version": "1.0.0",
+  "description": "Project Title",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/validate-curated-artifact.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arjun-Bindhu-Suresh/docu-sense-arjun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Arjun-Bindhu-Suresh/docu-sense-arjun/issues"
+  },
+  "homepage": "https://github.com/Arjun-Bindhu-Suresh/docu-sense-arjun#readme"
+}
