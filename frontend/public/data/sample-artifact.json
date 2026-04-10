@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "doc-001",
+  "title": "Sample AI Document",
+  "source_filename": "sample.pdf",
+  "ingestion_date": "2026-04-09",
+  "source_hash": "abc123",
+  "summary": "This document explains how AI systems process structured data and provide meaningful insights.",
+  "topics": ["Artificial Intelligence", "Data Processing", "Machine Learning"],
+  "chunks": [
+    {
+      "chunk_id": "chunk-1",
+      "raw_text": "AI systems process structured data.",
+      "normalized_text": "ai systems process structured data",
+      "section_path": "Introduction",
+      "content_type": "paragraph",
+      "char_range": {
+        "start": 0,
+        "end": 50
+      },
+      "page_number": 1,
+      "retrieval_terms": ["ai", "data"]
+    }
+  ]
+}
