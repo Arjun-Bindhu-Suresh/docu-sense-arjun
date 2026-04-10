@@ -1,4 +1,44 @@
 import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
+
+type ArtifactChunk = {
+  chunk_id: string;
+  raw_text: string;
+  normalized_text: string;
+  section_path: string;
+  content_type: string;
+  char_range: {
+    start: number;
+    end: number;
+  };
+  page_number?: number;
+  retrieval_terms: string[];
+};
+
+type ArtifactData = {
+  schema_version: string;
+  document_id: string;
+  title: string;
+  source_filename: string;
+  ingestion_date: string;
+  source_hash: string;
+  summary: string;
+  topics: string[];
+  chunks: ArtifactChunk[];
+};
+
+function loadArtifact(): ArtifactData {
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "data",
+    "sample-artifact.json"
+  );
+
+  const fileContents = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(fileContents);
+}
 
 export async function POST(req: Request) {
   try {
@@ -11,55 +51,35 @@ export async function POST(req: Request) {
       });
     }
 
-    // 🔥 Load your JSON artifact
-    const res = await fetch(
-      "http://localhost:3000/data/sample-artifact.json"
-    );
-
-    if (!res.ok) {
-      throw new Error("Failed to load artifact JSON");
-    }
-
-    const data = await res.json();
-
+    const data = loadArtifact();
     const chunks = data.chunks || [];
-
     const lowerQuestion = question.toLowerCase();
 
-    // 🔥 Simple keyword-based retrieval (v1 logic)
-    let matchedChunk = null;
+    let matchedChunk: ArtifactChunk | null = null;
 
     for (const chunk of chunks) {
       const text = chunk.raw_text.toLowerCase();
 
-      // basic matching rules
-      if (
-        lowerQuestion.includes("ai") && text.includes("ai")
-      ) {
+      if (lowerQuestion.includes("ai") && text.includes("ai")) {
         matchedChunk = chunk;
         break;
       }
 
-      if (
-        lowerQuestion.includes("data") && text.includes("data")
-      ) {
+      if (lowerQuestion.includes("data") && text.includes("data")) {
         matchedChunk = chunk;
         break;
       }
     }
 
-    // ❌ No match
     if (!matchedChunk) {
       return NextResponse.json({
         answer: "No relevant information found in the document.",
       });
     }
 
-    // ✅ Return matched chunk
     return NextResponse.json({
       answer: matchedChunk.raw_text,
     });
-
   } catch (error) {
     console.error("API Error:", error);
 
