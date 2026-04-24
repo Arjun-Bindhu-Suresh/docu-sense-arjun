@@ -9,7 +9,12 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "node tests/validate-curated-artifact.test.js"
+    "test": "node tests/validate-curated-artifact.test.js",
+    "eval:retrieval": "node evaluation/evaluate-retrieval.js",
+    "eval:baseline": "node evaluation/baseline-comparison.js",
+    "eval:quality": "node evaluation/evaluate-output-quality.js",
+    "eval:e2e": "node evaluation/evaluate-end-to-end.js",
+    "eval:all": "npm run eval:retrieval && npm run eval:baseline && npm run eval:quality && npm run eval:e2e"
   },
   "repository": {
     "type": "git",

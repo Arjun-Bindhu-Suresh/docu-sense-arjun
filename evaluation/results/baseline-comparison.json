@@ -1,0 +1,49 @@
+{
+  "run_date": "2026-04-24T02:21:05.827Z",
+  "baseline_pass_rate": "2/7",
+  "improved_pass_rate": "7/7",
+  "rows": [
+    {
+      "id": "tc-01",
+      "question": "What is machine learning?",
+      "baseline_pass": false,
+      "improved_pass": true
+    },
+    {
+      "id": "tc-02",
+      "question": "What are the types of machine learning?",
+      "baseline_pass": false,
+      "improved_pass": true
+    },
+    {
+      "id": "tc-03",
+      "question": "What metrics are used to evaluate machine learning models?",
+      "baseline_pass": false,
+      "improved_pass": true
+    },
+    {
+      "id": "tc-04",
+      "question": "What are the applications of machine learning in healthcare and finance?",
+      "baseline_pass": false,
+      "improved_pass": true
+    },
+    {
+      "id": "tc-05",
+      "question": "What ethical concerns exist in machine learning?",
+      "baseline_pass": false,
+      "improved_pass": true
+    },
+    {
+      "id": "tc-06",
+      "question": "Who invented the Python programming language?",
+      "baseline_pass": true,
+      "improved_pass": true
+    },
+    {
+      "id": "tc-07",
+      "question": "What is the current GDP of Germany?",
+      "baseline_pass": true,
+      "improved_pass": true
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "description": "Evaluation test cases for DocuSense Q&A system (Assignment 6)",
+  "document": "Introduction to Machine Learning (ml-fundamentals.pdf)",
+  "cases": [
+    {
+      "id": "tc-01",
+      "type": "representative",
+      "question": "What is machine learning?",
+      "expected_chunks": ["chunk-1"],
+      "expected_terms": ["artificial intelligence", "patterns", "predictions", "data"],
+      "notes": "Direct definition question — should hit chunk-1 (Introduction)"
+    },
+    {
+      "id": "tc-02",
+      "type": "representative",
+      "question": "What are the types of machine learning?",
+      "expected_chunks": ["chunk-2"],
+      "expected_terms": ["supervised", "unsupervised", "reinforcement"],
+      "notes": "Taxonomy question — should retrieve chunk-2 (Types of Learning)"
+    },
+    {
+      "id": "tc-03",
+      "type": "representative",
+      "question": "What metrics are used to evaluate machine learning models?",
+      "expected_chunks": ["chunk-4"],
+      "expected_terms": ["accuracy", "precision", "recall", "F1", "cross-validation"],
+      "notes": "Specific technical question — should hit chunk-4 (Model Evaluation)"
+    },
+    {
+      "id": "tc-04",
+      "type": "representative",
+      "question": "What are the applications of machine learning in healthcare and finance?",
+      "expected_chunks": ["chunk-5"],
+      "expected_terms": ["healthcare", "finance", "fraud", "chatbots"],
+      "notes": "Domain application question — should hit chunk-5 (Applications)"
+    },
+    {
+      "id": "tc-05",
+      "type": "representative",
+      "question": "What ethical concerns exist in machine learning?",
+      "expected_chunks": ["chunk-7"],
+      "expected_terms": ["bias", "privacy", "transparency", "accountability"],
+      "notes": "Ethics question — should hit chunk-7 (Ethical Considerations)"
+    },
+    {
+      "id": "tc-06",
+      "type": "failure",
+      "question": "Who invented the Python programming language?",
+      "expected_chunks": [],
+      "expected_terms": [],
+      "notes": "Out-of-scope question — no relevant chunks, system should say not found"
+    },
+    {
+      "id": "tc-07",
+      "type": "failure",
+      "question": "What is the current GDP of Germany?",
+      "expected_chunks": [],
+      "expected_terms": [],
+      "notes": "Completely off-topic — should return no matches"
+    }
+  ]
+}

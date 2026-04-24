@@ -1,25 +1,90 @@
 {
   "schema_version": "1.0.0",
   "document_id": "doc-001",
-  "title": "Sample AI Document",
-  "source_filename": "sample.pdf",
-  "ingestion_date": "2026-04-09",
-  "source_hash": "abc123",
-  "summary": "This document explains how AI systems process structured data and provide meaningful insights.",
-  "topics": ["Artificial Intelligence", "Data Processing", "Machine Learning"],
+  "title": "Introduction to Machine Learning",
+  "source_filename": "ml-fundamentals.pdf",
+  "ingestion_date": "2026-04-23",
+  "source_hash": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9",
+  "summary": "This document introduces the core concepts of machine learning, covering definitions, types of learning algorithms, training data requirements, model evaluation metrics, real-world applications, known limitations, and ethical considerations. It is intended as an accessible primer for practitioners and students entering the field.",
+  "topics": [
+    "Machine Learning",
+    "Supervised Learning",
+    "Unsupervised Learning",
+    "Model Evaluation",
+    "AI Ethics",
+    "Data Requirements",
+    "Applications"
+  ],
   "chunks": [
     {
       "chunk_id": "chunk-1",
-      "raw_text": "AI systems process structured data.",
-      "normalized_text": "ai systems process structured data",
+      "raw_text": "Machine learning is a branch of artificial intelligence that enables systems to learn from data and improve their performance on tasks without being explicitly programmed. Instead of following hardcoded rules, machine learning models identify patterns in training data and use those patterns to make predictions or decisions on new, unseen data.",
+      "normalized_text": "machine learning is a branch of artificial intelligence that enables systems to learn from data and improve their performance on tasks without being explicitly programmed instead of following hardcoded rules machine learning models identify patterns in training data and use those patterns to make predictions or decisions on new unseen data",
       "section_path": "Introduction",
       "content_type": "paragraph",
-      "char_range": {
-        "start": 0,
-        "end": 50
-      },
+      "char_range": { "start": 0, "end": 338 },
       "page_number": 1,
-      "retrieval_terms": ["ai", "data"]
+      "retrieval_terms": ["machine learning", "artificial intelligence", "patterns", "predictions", "data"]
+    },
+    {
+      "chunk_id": "chunk-2",
+      "raw_text": "There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. In supervised learning, models are trained on labeled data where the correct output is known. In unsupervised learning, models discover hidden patterns in unlabeled data. In reinforcement learning, an agent learns by interacting with an environment and receiving rewards or penalties.",
+      "normalized_text": "there are three main types of machine learning supervised learning unsupervised learning and reinforcement learning in supervised learning models are trained on labeled data where the correct output is known in unsupervised learning models discover hidden patterns in unlabeled data in reinforcement learning an agent learns by interacting with an environment and receiving rewards or penalties",
+      "section_path": "Types of Learning",
+      "content_type": "paragraph",
+      "char_range": { "start": 339, "end": 736 },
+      "page_number": 2,
+      "retrieval_terms": ["supervised", "unsupervised", "reinforcement", "labeled", "types"]
+    },
+    {
+      "chunk_id": "chunk-3",
+      "raw_text": "Training data is the foundation of any machine learning model. Models require large amounts of high-quality, representative data to learn effectively. Poor data quality, insufficient volume, or biased samples can severely degrade model performance. Data preprocessing steps such as cleaning, normalization, and feature engineering are critical before training begins.",
+      "normalized_text": "training data is the foundation of any machine learning model models require large amounts of high quality representative data to learn effectively poor data quality insufficient volume or biased samples can severely degrade model performance data preprocessing steps such as cleaning normalization and feature engineering are critical before training begins",
+      "section_path": "Training Data",
+      "content_type": "paragraph",
+      "char_range": { "start": 737, "end": 1098 },
+      "page_number": 3,
+      "retrieval_terms": ["training data", "preprocessing", "quality", "normalization", "feature engineering"]
+    },
+    {
+      "chunk_id": "chunk-4",
+      "raw_text": "Evaluating a machine learning model requires selecting appropriate metrics based on the task. For classification tasks, common metrics include accuracy, precision, recall, and F1 score. For regression tasks, mean squared error (MSE) and mean absolute error (MAE) are standard. Cross-validation is used to estimate how well a model generalizes to unseen data.",
+      "normalized_text": "evaluating a machine learning model requires selecting appropriate metrics based on the task for classification tasks common metrics include accuracy precision recall and f1 score for regression tasks mean squared error mse and mean absolute error mae are standard cross validation is used to estimate how well a model generalizes to unseen data",
+      "section_path": "Model Evaluation",
+      "content_type": "paragraph",
+      "char_range": { "start": 1099, "end": 1454 },
+      "page_number": 4,
+      "retrieval_terms": ["accuracy", "precision", "recall", "F1", "metrics", "evaluation", "cross-validation"]
+    },
+    {
+      "chunk_id": "chunk-5",
+      "raw_text": "Machine learning has broad real-world applications. In healthcare, models detect diseases from medical images and predict patient outcomes. In finance, algorithms detect fraud and automate trading decisions. In natural language processing, models power chatbots, translation systems, and sentiment analysis. Computer vision applications include self-driving vehicles and facial recognition.",
+      "normalized_text": "machine learning has broad real world applications in healthcare models detect diseases from medical images and predict patient outcomes in finance algorithms detect fraud and automate trading decisions in natural language processing models power chatbots translation systems and sentiment analysis computer vision applications include self driving vehicles and facial recognition",
+      "section_path": "Applications",
+      "content_type": "paragraph",
+      "char_range": { "start": 1455, "end": 1840 },
+      "page_number": 5,
+      "retrieval_terms": ["healthcare", "finance", "natural language processing", "computer vision", "applications", "fraud detection"]
+    },
+    {
+      "chunk_id": "chunk-6",
+      "raw_text": "Machine learning models face several significant challenges. Overfitting occurs when a model learns the training data too well and performs poorly on new data. Class imbalance in datasets can cause models to be biased toward the majority class. Many deep learning models also lack interpretability, making it difficult to explain their decisions to end users or regulators.",
+      "normalized_text": "machine learning models face several significant challenges overfitting occurs when a model learns the training data too well and performs poorly on new data class imbalance in datasets can cause models to be biased toward the majority class many deep learning models also lack interpretability making it difficult to explain their decisions to end users or regulators",
+      "section_path": "Limitations and Challenges",
+      "content_type": "paragraph",
+      "char_range": { "start": 1841, "end": 2209 },
+      "page_number": 6,
+      "retrieval_terms": ["overfitting", "class imbalance", "interpretability", "challenges", "limitations", "bias"]
+    },
+    {
+      "chunk_id": "chunk-7",
+      "raw_text": "Ethical considerations in machine learning are increasingly important. Bias in training data can lead to discriminatory model outputs affecting marginalized groups. Privacy concerns arise when models are trained on sensitive personal data. Transparency and accountability are essential, particularly in high-stakes domains such as criminal justice, hiring, and medical diagnosis.",
+      "normalized_text": "ethical considerations in machine learning are increasingly important bias in training data can lead to discriminatory model outputs affecting marginalized groups privacy concerns arise when models are trained on sensitive personal data transparency and accountability are essential particularly in high stakes domains such as criminal justice hiring and medical diagnosis",
+      "section_path": "Ethical Considerations",
+      "content_type": "paragraph",
+      "char_range": { "start": 2210, "end": 2581 },
+      "page_number": 7,
+      "retrieval_terms": ["ethics", "bias", "privacy", "transparency", "accountability", "fairness"]
     }
   ]
 }

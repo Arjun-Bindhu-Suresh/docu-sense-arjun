@@ -1,0 +1,8 @@
+{
+  "case_id": "tc-06",
+  "question": "Who invented the Python programming language?",
+  "answer": "No relevant information was found in this document for your question.",
+  "chunks_used": [],
+  "recorded_at": "2026-04-23",
+  "notes": "Out-of-scope question. After the minimum-terms fix, retrieval correctly returns no chunks. The API route returns the canned out-of-scope message directly."
+}

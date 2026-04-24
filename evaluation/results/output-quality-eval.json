@@ -1,0 +1,106 @@
+{
+  "run_date": "2026-04-24T02:21:06.123Z",
+  "metrics": {
+    "representative_term_coverage": "5/5",
+    "failure_scope_compliance": "2/2"
+  },
+  "results": [
+    {
+      "id": "tc-01",
+      "type": "representative",
+      "question": "What is machine learning?",
+      "answer": "[Introduction]\nMachine learning is a branch of artificial intelligence that enables systems to learn from data and impro...",
+      "metric": {
+        "type": "term_coverage",
+        "found": 4,
+        "total": 4,
+        "ratio": 1,
+        "missing": [],
+        "threshold": 0.5
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-02",
+      "type": "representative",
+      "question": "What are the types of machine learning?",
+      "answer": "[Types of Learning]\nThere are three main types of machine learning: supervised learning, unsupervised learning, and rein...",
+      "metric": {
+        "type": "term_coverage",
+        "found": 3,
+        "total": 3,
+        "ratio": 1,
+        "missing": [],
+        "threshold": 0.5
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-03",
+      "type": "representative",
+      "question": "What metrics are used to evaluate machine learning models?",
+      "answer": "[Introduction]\nMachine learning is a branch of artificial intelligence that enables systems to learn from data and impro...",
+      "metric": {
+        "type": "term_coverage",
+        "found": 5,
+        "total": 5,
+        "ratio": 1,
+        "missing": [],
+        "threshold": 0.5
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-04",
+      "type": "representative",
+      "question": "What are the applications of machine learning in healthcare and finance?",
+      "answer": "[Applications]\nMachine learning has broad real-world applications. In healthcare, models detect diseases from medical im...",
+      "metric": {
+        "type": "term_coverage",
+        "found": 4,
+        "total": 4,
+        "ratio": 1,
+        "missing": [],
+        "threshold": 0.5
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-05",
+      "type": "representative",
+      "question": "What ethical concerns exist in machine learning?",
+      "answer": "[Introduction]\nMachine learning is a branch of artificial intelligence that enables systems to learn from data and impro...",
+      "metric": {
+        "type": "term_coverage",
+        "found": 4,
+        "total": 4,
+        "ratio": 1,
+        "missing": [],
+        "threshold": 0.5
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-06",
+      "type": "failure",
+      "question": "Who invented the Python programming language?",
+      "answer": "No relevant information was found in this document for your question.",
+      "metric": {
+        "type": "scope_compliance",
+        "complied": true
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-07",
+      "type": "failure",
+      "question": "What is the current GDP of Germany?",
+      "answer": "No relevant information was found in this document for your question.",
+      "metric": {
+        "type": "scope_compliance",
+        "complied": true
+      },
+      "passed": true
+    }
+  ]
+}

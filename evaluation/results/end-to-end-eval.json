@@ -1,0 +1,123 @@
+{
+  "run_date": "2026-04-24T02:21:06.461Z",
+  "pipeline_stages": [
+    "artifact_loaded",
+    "retrieval_correct",
+    "prompt_well_formed",
+    "out_of_scope_gate",
+    "response_has_answer",
+    "response_has_chunks_used",
+    "answer_grounded_in_retrieved"
+  ],
+  "summary": {
+    "passed": 7,
+    "total": 7
+  },
+  "results": [
+    {
+      "id": "tc-01",
+      "type": "representative",
+      "question": "What is machine learning?",
+      "checks": {
+        "artifact_loaded": true,
+        "retrieval_correct": true,
+        "prompt_well_formed": true,
+        "out_of_scope_gate": null,
+        "response_has_answer": true,
+        "response_has_chunks_used": true,
+        "answer_grounded_in_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-02",
+      "type": "representative",
+      "question": "What are the types of machine learning?",
+      "checks": {
+        "artifact_loaded": true,
+        "retrieval_correct": true,
+        "prompt_well_formed": true,
+        "out_of_scope_gate": null,
+        "response_has_answer": true,
+        "response_has_chunks_used": true,
+        "answer_grounded_in_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-03",
+      "type": "representative",
+      "question": "What metrics are used to evaluate machine learning models?",
+      "checks": {
+        "artifact_loaded": true,
+        "retrieval_correct": true,
+        "prompt_well_formed": true,
+        "out_of_scope_gate": null,
+        "response_has_answer": true,
+        "response_has_chunks_used": true,
+        "answer_grounded_in_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-04",
+      "type": "representative",
+      "question": "What are the applications of machine learning in healthcare and finance?",
+      "checks": {
+        "artifact_loaded": true,
+        "retrieval_correct": true,
+        "prompt_well_formed": true,
+        "out_of_scope_gate": null,
+        "response_has_answer": true,
+        "response_has_chunks_used": true,
+        "answer_grounded_in_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-05",
+      "type": "representative",
+      "question": "What ethical concerns exist in machine learning?",
+      "checks": {
+        "artifact_loaded": true,
+        "retrieval_correct": true,
+        "prompt_well_formed": true,
+        "out_of_scope_gate": null,
+        "response_has_answer": true,
+        "response_has_chunks_used": true,
+        "answer_grounded_in_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-06",
+      "type": "failure",
+      "question": "Who invented the Python programming language?",
+      "checks": {
+        "artifact_loaded": true,
+        "retrieval_correct": true,
+        "prompt_well_formed": null,
+        "out_of_scope_gate": true,
+        "response_has_answer": true,
+        "response_has_chunks_used": true,
+        "answer_grounded_in_retrieved": null
+      },
+      "passed": true
+    },
+    {
+      "id": "tc-07",
+      "type": "failure",
+      "question": "What is the current GDP of Germany?",
+      "checks": {
+        "artifact_loaded": true,
+        "retrieval_correct": true,
+        "prompt_well_formed": null,
+        "out_of_scope_gate": true,
+        "response_has_answer": true,
+        "response_has_chunks_used": true,
+        "answer_grounded_in_retrieved": null
+      },
+      "passed": true
+    }
+  ]
+}

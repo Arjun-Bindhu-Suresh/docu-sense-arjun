@@ -1,20 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-
-type ArtifactChunk = {
-  chunk_id: string;
-  raw_text: string;
-  normalized_text: string;
-  section_path: string;
-  content_type: string;
-  char_range: {
-    start: number;
-    end: number;
-  };
-  page_number?: number;
-  retrieval_terms: string[];
-};
+import { retrieveTopChunks, ArtifactChunk } from "@/lib/retrieval";
 
 type ArtifactData = {
   schema_version: string;
@@ -28,63 +15,53 @@ type ArtifactData = {
   chunks: ArtifactChunk[];
 };
 
-function loadArtifact(): ArtifactData {
-  const filePath = path.join(
-    process.cwd(),
-    "public",
-    "data",
-    "sample-artifact.json"
-  );
+let cachedArtifact: ArtifactData | null = null;
 
-  const fileContents = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(fileContents);
+function loadArtifact(): ArtifactData {
+  if (cachedArtifact) return cachedArtifact;
+  const filePath = path.join(process.cwd(), "public", "data", "sample-artifact.json");
+  cachedArtifact = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  return cachedArtifact!;
 }
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const question: string = body.question || "";
+    const question: string = (body.question || "").trim();
 
-    if (!question.trim()) {
-      return NextResponse.json({
-        answer: "Please ask a valid question.",
-      });
+    if (!question) {
+      return NextResponse.json({ answer: "Please ask a valid question.", chunks_used: [] });
     }
 
     const data = loadArtifact();
-    const chunks = data.chunks || [];
-    const lowerQuestion = question.toLowerCase();
+    const topChunks = retrieveTopChunks(question, data.chunks, 3);
 
-    let matchedChunk: ArtifactChunk | null = null;
-
-    for (const chunk of chunks) {
-      const text = chunk.raw_text.toLowerCase();
-
-      if (lowerQuestion.includes("ai") && text.includes("ai")) {
-        matchedChunk = chunk;
-        break;
-      }
-
-      if (lowerQuestion.includes("data") && text.includes("data")) {
-        matchedChunk = chunk;
-        break;
-      }
-    }
-
-    if (!matchedChunk) {
+    if (topChunks.length === 0) {
       return NextResponse.json({
-        answer: "No relevant information found in the document.",
+        answer: "No relevant information was found in this document for your question.",
+        chunks_used: [],
       });
     }
 
+    // Build answer directly from retrieved chunks — no LLM call needed
+    const answer = topChunks
+      .map((c) => `[${c.section_path}]\n${c.raw_text}`)
+      .join("\n\n");
+
     return NextResponse.json({
-      answer: matchedChunk.raw_text,
+      answer,
+      chunks_used: topChunks.map((c) => ({
+        chunk_id: c.chunk_id,
+        section_path: c.section_path,
+        raw_text: c.raw_text,
+      })),
     });
   } catch (error) {
     console.error("API Error:", error);
-
-    return NextResponse.json({
-      answer: "System error occurred while processing your request.",
-    });
+    const message = error instanceof Error ? error.message : "Unknown error";
+    return NextResponse.json(
+      { answer: `System error: ${message}`, chunks_used: [] },
+      { status: 500 }
+    );
   }
 }

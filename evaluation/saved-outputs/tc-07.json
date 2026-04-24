@@ -1,0 +1,8 @@
+{
+  "case_id": "tc-07",
+  "question": "What is the current GDP of Germany?",
+  "answer": "No relevant information was found in this document for your question.",
+  "chunks_used": [],
+  "recorded_at": "2026-04-23",
+  "notes": "Completely off-topic question. No economic data in the ML document. Retrieval returns no chunks, API route returns the out-of-scope message directly."
+}
